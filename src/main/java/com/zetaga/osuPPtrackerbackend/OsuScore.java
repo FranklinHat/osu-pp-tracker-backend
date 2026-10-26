@@ -2,10 +2,11 @@ package com.zetaga.osuPPtrackerbackend;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
-import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+
+@Data
 
 public class OsuScore {
 
