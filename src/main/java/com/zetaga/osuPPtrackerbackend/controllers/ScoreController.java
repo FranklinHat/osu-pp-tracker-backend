@@ -1,6 +1,7 @@
 package com.zetaga.osuPPtrackerbackend.controllers;
 
 
+import com.zetaga.osuPPtrackerbackend.services.PpCalculatorService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,11 +17,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ScoreController {
 
+    private final PpCalculatorService calculatorService;
+
+    public ScoreController(PpCalculatorService calculatorService){
+        this.calculatorService = calculatorService;
+    }
+
     @GetMapping("/hello")
     public String testMethod(){
 
         return "Hello there!";
 
     }
-
 }

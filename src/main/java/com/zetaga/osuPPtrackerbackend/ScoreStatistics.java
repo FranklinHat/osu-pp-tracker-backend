@@ -5,7 +5,6 @@ import lombok.Data;
 
 public class ScoreStatistics {
 
-
     private int count300;
     private int count100;
     private int count50;
