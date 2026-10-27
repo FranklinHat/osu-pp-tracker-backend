@@ -4,6 +4,7 @@ package com.zetaga.osuPPtrackerbackend.controllers;
 import com.zetaga.osuPPtrackerbackend.ScoreStatistics;
 import com.zetaga.osuPPtrackerbackend.services.PpCalculatorService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -32,13 +33,15 @@ public class ScoreController {
     }
 
     @GetMapping("/potential-accuracy")
-    public double potentialAccuracy(){
-        ScoreStatistics score = new ScoreStatistics();
-        score.setCount50(8);
-        score.setCount100(23);
-        score.setCount300(100);
-        score.setCountMiss(9);
+    public double potentialAccuracy(@RequestParam int count50,@RequestParam int count100,
+                                    @RequestParam int count300,@RequestParam int countMiss){
 
-        return calculatorService.calculatePotentialAccuracy(score);
+        ScoreStatistics stats = new ScoreStatistics();
+        stats.setCount50(count50);
+        stats.setCount100(count100);
+        stats.setCount300(count300);
+        stats.setCountMiss(countMiss);
+
+        return calculatorService.calculatePotentialAccuracy(stats);
     }
 }
