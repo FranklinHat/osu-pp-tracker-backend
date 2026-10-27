@@ -33,8 +33,8 @@ public class ScoreController {
     }
 
     @GetMapping("/potential-accuracy")
-    public double potentialAccuracy(@RequestParam int count50,@RequestParam int count100,
-                                    @RequestParam int count300,@RequestParam int countMiss){
+    public double potentialAccuracy(@RequestParam int count50, @RequestParam int count100,
+                                    @RequestParam int count300, @RequestParam(defaultValue = "0") int countMiss){
 
         ScoreStatistics stats = new ScoreStatistics();
         stats.setCount50(count50);
