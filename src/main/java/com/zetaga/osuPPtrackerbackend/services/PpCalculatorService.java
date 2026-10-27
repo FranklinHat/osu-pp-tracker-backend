@@ -3,6 +3,12 @@ package com.zetaga.osuPPtrackerbackend.services;
 import com.zetaga.osuPPtrackerbackend.ScoreStatistics;
 import org.springframework.stereotype.Service;
 
+/**
+ * @author frankhat
+ * @version 1.0
+ *
+ */
+
 @Service
 public class PpCalculatorService {
 
